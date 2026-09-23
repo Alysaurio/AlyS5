@@ -23,6 +23,20 @@ class AAlyS5Character : public ACharacter
 {
 	GENERATED_BODY()
 
+public:
+	// AlyS5Character.h 
+	UPROPERTY(BlueprintReadOnly, Category = "Vida")
+	float Vida = 100.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Vida")
+	float VidaMaxima = 100.f;
+
+	UFUNCTION(BlueprintCallable, Category = "Vida")
+	void AgregarVida(float Cantidad);
+
+	UFUNCTION(BlueprintCallable, Category = "Vida")
+	void RestarVida(float Cantidad);
+
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* CameraBoom;

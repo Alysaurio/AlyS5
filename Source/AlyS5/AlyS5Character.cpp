@@ -131,3 +131,14 @@ void AAlyS5Character::DoJumpEnd()
 	// signal the character to stop jumping
 	StopJumping();
 }
+
+// AlyS5Character.cpp
+void AAlyS5Character::AgregarVida(float Cantidad)
+{
+	Vida = FMath::Clamp(Vida + Cantidad, 0.f, VidaMaxima);
+}
+
+void AAlyS5Character::RestarVida(float Cantidad)
+{
+	Vida = FMath::Clamp(Vida - Cantidad, 0.f, VidaMaxima);
+}
